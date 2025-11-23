@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sat Nov 22 20:00:16 MST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-019a-aea7-ae13-000002b4ae00 
+Sat Nov 22 21:42:13 MST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-019a-af05-07c6-000002b75410 
 on database directory /Users/valuedcustomer/Documents/Bellvue/DSC 650 - Big Data/Final Project/Big_data2/DSC650_Final_Project/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6 
 Loaded from file:/Users/valuedcustomer/Documents/Bellvue/DSC%20650%20-%20Big%20Data/Final%20Project/Big_data2/DSC650_Final_Project/venv/lib/python3.11/site-packages/pyspark/jars/derby-10.16.1.1.jar
 java.vendor=Homebrew

@@ -12,26 +12,19 @@ df = spark.sql("SELECT Hours_Studied, Previous_Scores, Sleep_Hours, Sample_Quest
 # Step 3: Handle null values by either dropping or filling them
 df = df.na.drop()  # Drop rows with null values
 
-#Step 3b: Convert the string feature to numeric using StringIndexer
-indexer = StringIndexer(
-        inputCol="Extracurricular_Activities",
-        outputCol="Extracurricular_Activities_Idx",
-        handleInvalid="keep"
-    )
-indexed_df = indexer.fit(df).transform(df)
+
 # Step 4: Prepare the data for MLlib by assembling features into a vector
 assembler = VectorAssembler(
         inputCols=[
             "Hours_Studied",
             "Previous_Scores",
-            "Extracurricular_Activities_Idx",  # numeric version of the string column
             "Sleep_Hours",
             "Sample_Question_Papers_Practiced"
         ],
         outputCol="features",
         handleInvalid="skip"
     )
-assembled_df = assembler.transform(indexed_df).select("features", "Performance_Index")
+assembled_df = assembler.transform(df).select("features", "Performance_Index")
 
 
 # Step 5: Split the data into training and testing sets
