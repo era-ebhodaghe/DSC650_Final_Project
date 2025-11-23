@@ -58,3 +58,4 @@ rdd.foreachPartition(write_to_hbase_partition)
 # Step 9: Stop the Spark session
 spark.stop()
 
+
