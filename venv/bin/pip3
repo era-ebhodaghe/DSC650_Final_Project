@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/valuedcustomer/Documents/Bellvue/DSC 650 - Big Data/Final Project/Big_data2/DSC650_Final_Project/venv/bin/python3" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pip._internal.cli.main import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
