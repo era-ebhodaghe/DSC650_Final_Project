@@ -8,7 +8,7 @@ spark = SparkSession.builder.appName("studentperformance").enableHiveSupport().g
 
 # Step 2: Load the data from the Hive table 'perf' into a Spark DataFrame
 
-df = spark.sql("SELECT Hours_Studied, Previous_Scores, Sleep_Hours, Sample_Question_Papers_Practiced, Performance_Index FROM perf")
+df = spark.sql("SELECT Hours_Studied, Previous_Scores,Extra_Curricular_Activities, Sleep_Hours, Sample_Question_Papers_Practiced, Performance_Index FROM perf")
 # Step 3: Handle null values by either dropping or filling them
 df = df.na.drop()  # Drop rows with null values
 
@@ -18,6 +18,7 @@ assembler = VectorAssembler(
         inputCols=[
             "Hours_Studied",
             "Previous_Scores",
+            "Extra_Curricular_Activities",
             "Sleep_Hours",
             "Sample_Question_Papers_Practiced"
         ],
