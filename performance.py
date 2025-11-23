@@ -7,17 +7,8 @@ import happybase
 spark = SparkSession.builder.appName("studentperformance").enableHiveSupport().getOrCreate()
 
 # Step 2: Load the data from the Hive table 'perf' into a Spark DataFrame
-df = spark.sql("""
-        SELECT 
-            CAST(Hours_Studied AS INT)                    AS Hours_Studied,
-            CAST(Previous_Scores AS INT)                  AS Previous_Scores,
-            CAST(Extracurricular_Activities AS STRING)    AS Extracurricular_Activities,
-            CAST(Sleep_Hours AS INT)                      AS Sleep_Hours,
-            CAST(Sample_Question_Papers_Practiced AS INT) AS Sample_Question_Papers_Practiced,
-            CAST(Performance_Index AS INT)                AS Performance_Index
-        FROM perf
-    """)
 
+df = spark.sql("SELECT Hours_Studied, Previous_Scores, Sleep_Hours, Sample_Question_Papers_Practiced, Performance_Index FROM perf")
 # Step 3: Handle null values by either dropping or filling them
 df = df.na.drop()  # Drop rows with null values
 
