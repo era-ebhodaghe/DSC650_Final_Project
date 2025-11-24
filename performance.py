@@ -4,7 +4,7 @@ from pyspark.ml.regression import LinearRegression
 import happybase
 
 # Step 1: Create a Spark session
-spark = SparkSession.builder.appName("studentperformance").enableHiveSupport().getOrCreate()
+spark = SparkSession.builder.appName("studentperformance to HBASE").enableHiveSupport().getOrCreate()
 
 # Step 2: Load the data from the Hive table 'perf' into a Spark DataFrame
 
