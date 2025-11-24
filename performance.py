@@ -13,7 +13,7 @@ df = spark.sql("SELECT Hours_Studied, Previous_Scores,Extra_Curricular_Activitie
 df = df.na.drop()  # Drop rows with null values
 
 
-# Step 4: Prepare the data for MLlib by assembling features into a vector
+# Step 4: Prepare the data for MLLib by assembling features into a vector
 assembler = VectorAssembler(
         inputCols=[
             "Hours_Studied",
